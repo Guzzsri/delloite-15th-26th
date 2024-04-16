@@ -102,3 +102,11 @@ aws ec2 describe-instances --region us-east-1
 aws ec2 describe-instances --region us-east-1 --query 'Reservations[*].Instances[*].[InstanceId]'
 
 ```
+```
+install apache2 on server
+
+apt install apache2
+
+manage sg and nacl to switch traffic across however u like
+
+``` 
