@@ -97,4 +97,8 @@ attach it to my instance
    48  aws s3 ls
    49  aws iam list-users
    50  ls -a
+aws ec2 describe-instances --region us-east-1
 
+aws ec2 describe-instances --region us-east-1 --query 'Reservations[*].Instances[*].[InstanceId]'
+
+```
