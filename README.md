@@ -167,3 +167,14 @@ cloudshell:
     8  ssh -i "raman.pem" ubuntu@ec2-3-88-158-9.compute-1.amazonaws.com
 
 ```
+
+
+```
+created an alarm , and set up a threshold of 50 cpu utilization..
+
+stressing the cpu :
+
+apt install stress
+stress --cpu 16
+
+```
