@@ -151,3 +151,19 @@ aws s3 ls
    83  cat ExampleFileDecrypted.txt
 
 ```
+
+
+```
+cloudshell:
+
+[root@ip-10-136-41-188 ~]# history
+    1  ssh -i "raman-nv-delloite.pem" ubuntu@ec2-3-88-158-9.compute-1.amazonaws.com
+    2  vi raman.pem
+    3  ls
+    4  ssh -i "raman.pem" ubuntu@ec2-3-88-158-9.compute-1.amazonaws.com
+    5  ls -ltr
+    6  chmod 400 raman.pem 
+    7  ls -ltr
+    8  ssh -i "raman.pem" ubuntu@ec2-3-88-158-9.compute-1.amazonaws.com
+
+```
