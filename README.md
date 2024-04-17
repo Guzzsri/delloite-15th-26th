@@ -110,3 +110,44 @@ apt install apache2
 manage sg and nacl to switch traffic across however u like
 
 ``` 
+
+
+```
+encryption kms example :
+
+aws encryption :
+
+aws own managed keys : by default
+u create ur kms cmk on kms
+
+
+
+
+
+
+
+aws s3 ls
+   62  ls -a
+   63  clear
+   64  vi ExampleSecretFile.txt
+   65  ls
+   66  cat ExampleSecretFile.txt 
+   67* aws kms decrypt  ExampleSecretFileEncrypted.base64
+   68  ls
+   69  cat ExampleSecretFileEncrypted.base64
+   70  cat ExampleSecretFileEncrypted.base64 | base64 --decode > ExampleSecretFileEncrypted
+   71  ls
+   72  clear
+   73  cat ExampleSecretFileEncrypted
+   74  ls
+   75  aws kms decrypt --ciphertext-blob fileb://ExampleSecretFileEncrypted   --output text --query Plaintext > ExampleFileDecrypted.base64  --region eu-west-2
+   76  aws kms decrypt --ciphertext-blob fileb://ExampleSecretFileEncrypted   --output text --query Plaintext > ExampleFileDecrypted.base64  --region us-east-1
+   77  ls
+   78  cat ExampleFileDecrypted.base64
+   79  cat ExampleFileDecrypted.base64 | base64 --decode > ExampleFileDecrypted.txt
+   80  ls
+   81  cat xampleFileDecrypted.txt
+   82  cat exampleFileDecrypted.txt
+   83  cat ExampleFileDecrypted.txt
+
+```
