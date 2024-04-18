@@ -178,3 +178,82 @@ apt install stress
 stress --cpu 16
 
 ```
+
+```
+
+secrets manager :
+
+
+
+--- create a secret in sm
+
+-- write the code 
+
+
+-https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager/client/get_secret_value.html
+
+
+
+
+
+root@ip-172-31-18-82:~# cat sm.py 
+import boto3
+from botocore.exceptions import ClientError
+
+def get_secret():
+    secret_name = "test-secret"
+    region_name = "us-east-1"
+
+    # Create a Secrets Manager client
+    session = boto3.session.Session()
+    client = session.client(
+        service_name='secretsmanager',
+        region_name=region_name
+    )
+
+    try:
+        get_secret_value_response = client.get_secret_value(
+            SecretId=secret_name
+        )
+    except ClientError as e:
+        # For a list of exceptions thrown, see
+        # https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
+        raise e
+
+    secret = get_secret_value_response['SecretString']
+
+    return secret
+
+# Call the function and print the secret
+secret_value = get_secret()
+print(secret_value)
+
+
+
+
+
+
+
+
+vi sm.py
+  119  cat sm.py 
+  120  clear
+  121  pip 
+  122  python --version
+  123  apt install python3-pip
+  124  pip install virtualenv
+  125  python3 -m venv testenv 
+  126  apt install python3.8-venv
+  127  ls
+  128  rm -rf testenv/
+  129  python3 -m venv testenv 
+  130  ls
+  131  source testenv/bin/activate
+  132  cat sm.py 
+  133  pip install boto3
+python3 sm.py
+
+
+
+
+```
