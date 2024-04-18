@@ -337,5 +337,53 @@ git clone https://github.com/juice-shop/juice-shop.git
   218  horusec start -p . --disable-docker="true"
 
 
-
+```
 -------------------------------------------------------------------
+
+```
+DAST :
+
+docker files >> docker image >> docker container
+dast : owasp zap 
+ 
+docker installation :
+https://docs.docker.com/engine/install/ubuntu/ :
+
+  261  sudo apt-get update
+  262  sudo apt-get install ca-certificates curl
+  263  sudo install -m 0755 -d /etc/apt/keyrings
+  264  sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+  265  sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+
+
+  267  sudo apt-get update
+  268  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+
+
+
+
+rm -rf horusec-config.json 
+  251  clear
+  252  ls
+  253  cd ..
+  254  ls
+  269  docker ps
+  270  docker pull bkimminich/juice-shop
+  271  docker images
+  277  docker run -d -p 81:3000 bkimminich/juice-shop
+  278  docke ps
+  279  docker ps
+
+
+
+
+```
+
