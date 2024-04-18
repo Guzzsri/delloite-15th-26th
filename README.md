@@ -294,3 +294,48 @@ print(secret_value['password'])
 
 ```
 
+```
+
+static -horusec :
+
+
+
+static testing : horusec 
+  https://github.com/juice-shop/juice-shop
+
+
+git clone https://github.com/juice-shop/juice-shop.git
+  189  clear
+  190  ls
+  191  history
+  192  clear
+  193  ls
+  194  cd juice-shop/
+  195  ls
+  196  clear
+  197  curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/master/deployments/scripts/install.sh | bash -s latest
+  198  apt install jq
+  199  curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/master/deployments/scripts/install.sh | bash -s latest
+  200  horusec
+  201  clear
+  202  horusec
+  203  clear
+  204  horusec -h
+  205  clear
+  206  ls
+  207  horusec -h
+  208  clear
+  209  horusec -p .
+  210  clear
+  211  ls
+  212  horusec start -p .
+  213  clear
+  214  horusec start -p .
+  215  horusec start
+  216  clear
+  217  ls
+  218  horusec start -p . --disable-docker="true"
+
+
+
+-------------------------------------------------------------------
