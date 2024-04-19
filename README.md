@@ -383,7 +383,55 @@ rm -rf horusec-config.json
   279  docker ps
 
 
+-- after deployingthe application
 
+-- https://www.zaproxy.org/docs/docker/baseline-scan/
+https://www.zaproxy.org/docs/alerts/
+
+
+docker run -t ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t http://18.215.157.2:81
+
+
+
+docker run -v $(pwd):/zap/wrk/:rw -t -u $(id -u):$(id -g) ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t http://18.232.148.71:81 -r dastreport.html
+
+
+
+
+
+docker rm -f `docker ps -aq`
+  286  clear
+  287  docker ps -a
+  288  docker pull bkimminich/juice-shop
+  289  docker images
+  290  docker run -d -p 81:3000 bkimminich/juice-shop
+  291  docker ps
+  292  docker run -t ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t http://18.215.157.2:81
+docker ps -a
+  295  docker start 04b8c7b44008
+  296  docker start 7012eb4af12b
+  297  docker ps
+  298  pwd
+  299  docker run -v $(pwd):/zap/wrk/:rw -t -u $(id -u):$(id -g) ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t http://18.232.148.71:81 -r dastreport.html
+  300  ls
+  301  clear
+  302  cat dastreport.html 
+  303  clear
+  304  which httpd
+  305  systemctl status apache2
+  306  which apache2
+  307  netstat -tulnp
+  308  apt install net-tools
+  309  netstat -tulnp
+  310  cd /var/www/
+  311  ls
+  312  cd html/
+  313  ls
+  314  cp /root/dastreport.html .
+  315  ls
+  316  mv index.html index
+
+----
 
 ```
 
