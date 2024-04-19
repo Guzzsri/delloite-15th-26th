@@ -435,3 +435,26 @@ docker ps -a
 
 ```
 
+```
+
+SRE IMPORTANT LINKS :
+
+Difference Between DevOps and SRE :
+
+https://www.youtube.com/watch?v=uTEL8Ff1Zvk&list=PLIivdWyY5sqJrKl7D2u-gmis8h9K66qoj&index=1
+
+
+SLIs, SLOs, SLAs :
+
+https://www.youtube.com/watch?v=tEylFyxbDLE&list=PLIivdWyY5sqJrKl7D2u-gmis8h9K66qoj&index=2
+
+
+Risk and Error Budgets :
+
+https://www.youtube.com/watch?v=y2ILKr8kCJU&list=PLIivdWyY5sqJrKl7D2u-gmis8h9K66qoj&index=3
+
+Toil :
+
+https://www.youtube.com/watch?v=IvQ-15-yE_c&list=PLIivdWyY5sqJrKl7D2u-gmis8h9K66qoj&index=4
+
+```
