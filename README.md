@@ -545,3 +545,106 @@ git status
    70  git push origin main
 
 ```
+
+
+```
+
+
+stop the server :
+
+requiremnt :
+t2.micro >> t2.large , instance settings
+storage : 20 gb , storage >> modifyvolume 
+
+start the server
+
+
+-- installing sonrqube server as a container :
+
+docker run -d --name sonarqube -p 9000:9000 -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true sonarqube:latest
+
+
+
+http://54.236.234.107:9000/projects/create
+
+username: admin
+password :admin1
+
+
+--- create a project on sonar ui :
+
+sonar token , test :
+
+sqp_7284c8f961d5e5a16d7eed7c21bbf4574d3c5ca6 
+
+
+---- installing sonar cli as a container :
+https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/scanners/sonarscanner/
+
+
+docker run \
+    --rm \
+    -e SONAR_HOST_URL="http://54.236.234.107:9000/" \
+    -e SONAR_SCANNER_OPTS="-Dsonar.projectKey=test" \
+    -e SONAR_TOKEN="sqp_7284c8f961d5e5a16d7eed7c21bbf4574d3c5ca6" \
+    -v "/root/juice-shop:/usr/src" \
+    sonarsource/sonar-scanner-cli
+
+
+
+
+
+
+docker run \
+    --rm \
+    -e SONAR_HOST_URL="http://54.236.234.107:9000/" \
+    -e SONAR_SCANNER_OPTS="-Dsonar.projectKey=test" \
+    -e SONAR_TOKEN="sqp_7284c8f961d5e5a16d7eed7c21bbf4574d3c5ca6" \
+    -v "/root/nodejsapp_jenkins-docker-kubernetes:/usr/src" \
+    sonarsource/sonar-scanner-cli
+
+
+
+
+
+
+history :
+
+
+
+docker ps -a
+   89  docker images
+   90  docker run -d --name sonarqube -p 9000:9000 -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true sonarqube:latest
+   91  docker ps
+   92  docker images
+   93  clear
+   94  ls
+   95  git clone https://github.com/juice-shop/juice-shop.git
+   96  ls
+   97  cd juice-shop/
+   98  ls
+   99  docker ps
+  100  ls
+  101  pwd
+  102  clear
+  103  ls
+  104  dockr ps
+  105  clear
+  106  docker ps
+  107  docker run     --rm     -e SONAR_HOST_URL="http://54.236.234.107:9000/"     -e SONAR_SCANNER_OPTS="-Dsonar.projectKey=test"     -e SONAR_TOKEN="sqp_7284c8f961d5e5a16d7eed7c21bbf4574d3c5ca6"     -v "/root/juice-shop:/usr/src"     sonarsource/sonar-scanner-cli
+  108  clear
+  109  git clone https://github.com/ramannkhanna2/nodejsapp_jenkins-docker-kubernetes.git
+  110  rm -rf nodejsapp_jenkins-docker-kubernetes/
+  111  cd ..
+  112  git clone https://github.com/ramannkhanna2/nodejsapp_jenkins-docker-kubernetes.git
+  113  cd nodejsapp_jenkins-docker-kubernetes/
+  114  pwd
+  115  docker ps
+  116  docker run     --rm     -e SONAR_HOST_URL="http://54.236.234.107:9000/"     -e SONAR_SCANNER_OPTS="-Dsonar.projectKey=test"     -e SONAR_TOKEN="sqp_7284c8f961d5e5a16d7eed7c21bbf4574d3c5ca6"     -v "/root/nodejsapp_jenkins-docker-kubernetes:/usr/src"     sonarsource/sonar-scanner-cli
+  117  history
+
+
+
+============================================
+
+```
