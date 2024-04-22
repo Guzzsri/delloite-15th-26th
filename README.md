@@ -458,3 +458,69 @@ Toil :
 https://www.youtube.com/watch?v=IvQ-15-yE_c&list=PLIivdWyY5sqJrKl7D2u-gmis8h9K66qoj&index=4
 
 ```
+
+
+
+
+```
+--- create a public repo test using ui :
+
+
+git
+    4  clear
+    5  git clone https://github.com/ramannkhanna2/test.git
+    6  ls
+    7  cd test
+    8  ls
+    9  ls -a
+   10  git branch
+   11  vi testfile
+   12  ls
+   13  git status
+   14  git add .
+   15  ls
+   16  git status
+
+   20  git config --global user.name raman
+   21  git config --global user.email raman@email
+   17  git commit -m "added new file"
+   22  git status
+   23  git remote -v
+   24  git push origin main
+   25  ls
+   26  cd ..
+   27  ls
+   28  clear
+
+
+
+-- after this now go to repository settings >> deploy keys :
+
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/managing-deploy-keys
+
+   29  ssh-keygen -t ed25519 -C "raman@email"
+   30  ls -a
+   31  cd .ssh
+   32  ls
+   33  cat cat id_ed25519.pub 
+   34  cat id_ed25519.pub 
+   35  clear
+   36  cd ..
+   37  ls
+   38  git clone git@github.com:ramannkhanna2/test.git
+   39  ls
+   40  rm -rf test
+   41  git clone git@github.com:ramannkhanna2/test.git
+   42  ls
+   43  cd test/
+   44  ls
+   45  git status
+   46  vi testfile2
+   47  ls
+   48  git status
+   49  git add .
+   50  git commit -m "changes as per ssh method"
+   51  git push origin main
+
+
+===============================================================
