@@ -524,3 +524,24 @@ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/managing
 
 
 ===============================================================
+
+```
+
+```
+
+git status
+   58  ls
+   59  vi password
+   60  ls
+   61  git status
+   62  ls
+   63  vi .gitignore
+   64  cat .gitignore 
+   65  git status
+   66  git add .
+   67  git status
+   68  git commit -m "created gitignore file"
+   69  git status
+   70  git push origin main
+
+```
