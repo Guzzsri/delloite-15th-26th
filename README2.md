@@ -47,3 +47,19 @@ docker images
 
 
 ```
+
+
+
+```
+
+
+  181  ls
+  182  docker run --rm -i hadolint/hadolint < dockerfile
+  183  vi dockerfile 
+  184  docker run --rm -i hadolint/hadolint < dockerfile
+  185  vi dockerfile 
+  186  docker run --rm -i hadolint/hadolint < dockerfile
+  187  docker images
+  188  history
+
+```
