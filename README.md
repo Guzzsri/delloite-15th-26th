@@ -575,7 +575,7 @@ password :admin1
 
 sonar token , test :
 
-sqp_7284c8f961d5e5a16d7eed7c21bbf4574d3c5ca6 
+sqa_000c2422b947e9df8199707eb012e83e1a8e257d
 
 
 ---- installing sonar cli as a container :
