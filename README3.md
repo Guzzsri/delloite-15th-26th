@@ -162,3 +162,73 @@ sudo apt-get install -y kubelet kubeadm kubectl
 
 
 ```
+
+
+```
+
+
+alias k=kubectl
+    8  k get nodes
+    9  history
+   10  k get nodes
+   11  clear
+   12  k 
+   13  clear
+   14  k get pods
+   15  k get ns
+   16  clear
+   17  k get nodes
+   18  k k get pods
+   19  k get pods
+   20  k getns
+   21  k get ns
+   22  clear
+   23  k get pods -n kube-system
+   24  k get pods
+   25  docker ps
+   26  clear
+   27  k get pods -n kube-system
+   28  k get pods -o wide
+   29  k get pods -o wide -n kube-system
+   30  clear
+   31  k run ramanapp --image httpd 
+   32  k get pods
+   33  k get pods -o wide -n kube-system
+   34  clear
+   35  k get pods
+   36  k get pods -o wide
+   37  cat script 
+   38  clear
+   39  k get pods
+   40  k get pods -o wide
+   41  k get ns
+   42  k get pods -o wide
+   43  k get pods -nkube-system
+   44  clear
+   45  k get api-resources
+   46  k api-resources
+   47  clear
+   48  k get pods
+   49  k run ramanapp2 --image httpd 
+   50  k get pods
+   51  k get pods -o wide
+   52  k delete pod ramanapp
+   53  k get pods
+   54  clear
+   55  k get pods
+   56  k create ns raman
+   57  k get ns
+   58  k create deployment ramandep --image httpd --replicas 5 -n raman
+   59  k get pods
+   60  k get pods -n raman
+   61  k get pods -n raman -o wide
+   62  k scale deploy ramandep --replicas 10 -n raman
+   63  k get pods -n raman -o wide
+   64  k delete pod ramandep-676757c4b5-rw59z
+   65  k delete pod ramandep-676757c4b5-rw59z -n raman
+   66  k get pods -n raman -o wide
+   67  history
+root@master:~# k get pods -n raman -o wide
+
+
+```
