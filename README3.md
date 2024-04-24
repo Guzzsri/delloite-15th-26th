@@ -295,4 +295,48 @@ k api-resources
   137  k auth can-i list pod -n raman --as=system:serviceaccount:raman:ramansa
   138  k auth can-i update  pod -n raman --as=system:serviceaccount:raman:ramansa
 
+
+
+
+
+
+
+
+root@master:~# cat role.yml 
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: raman
+  name: pod-reader
+rules:
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["pods"]
+  verbs: ["get", "watch", "list"]
+
+
+
+
+
+
+
+
+root@master:~# cat rolebinding.yml 
+apiVersion: rbac.authorization.k8s.io/v1
+# This role binding allows "jane" to read pods in the "default" namespace.
+# You need to already have a Role named "pod-reader" in that namespace.
+kind: RoleBinding
+metadata:
+  name: myrolebind
+  namespace: raman
+subjects:
+# You can specify more than one "subject"
+- kind: ServiceAccount
+  name: ramansa # "name" is case sensitive
+  namespace: raman
+roleRef:
+  # "roleRef" specifies the binding to a Role / ClusterRole
+  kind: Role #this must be Role or ClusterRole
+  name: pod-reader # this must match the name of the Role or ClusterRole you wish to bind to
+  apiGroup: rbac.authorization.k8s.io
+
 ```
