@@ -247,3 +247,52 @@ k get pods -n raman
    93  k get pods -n raman -o wide
 
 ```
+
+
+```
+
+k api-resources
+   97  clear
+   98  ls
+   99  k get pods
+  100  k delete dep ramandep
+  101  k delete dep ramandep -n raman
+  102  k delete deploy ramandep -n raman
+  103  k delete pod ramanapp
+  104  k delete pod ramanapp2
+  105  clear
+  106  k run ramanapp --image httpd -n raman
+  107  k get pods -n raman
+  108  k get sa -n raman
+  109  k get roles -n raman
+  110  k get rolebinding -n raman
+  111  k describe sa -n raman
+  112  vi role.yml
+  113  k api-resources
+  114  vi role.yml 
+  115  k create -f role.yml 
+  116  k get role -n raman
+  117  k describe role pod-reader -n raman
+  118  cat role.yml 
+  119  clear
+  120  k create sa ramansa -n raman
+  121  k create describe sa ramansa -n raman
+  122  k describe sa ramansa -n raman
+  123  vi rolebinding.yml
+  124  k create -f rolebinding.yml 
+  125  vi rolebinding.yml 
+  126  k create -f rolebinding.yml 
+  127  vi rolebinding.yml 
+  128  k create -f rolebinding.yml 
+  129  k get rolebinding -n raman
+  130  k describe rolebinding -n raman
+  131  k auth can-i create pod -n raman --as=system:serviceaccount:raman:ramansa
+  132  cat role.yml 
+  133  k auth can-i get pod -n raman --as=system:serviceaccount:raman:ramansa
+  134  k auth can-i get pod 
+  135  k auth can-i create pod 
+  136  k auth can-i get pod -n raman --as=system:serviceaccount:raman:ramansa
+  137  k auth can-i list pod -n raman --as=system:serviceaccount:raman:ramansa
+  138  k auth can-i update  pod -n raman --as=system:serviceaccount:raman:ramansa
+
+```
