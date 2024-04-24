@@ -187,7 +187,7 @@ alias k=kubectl
    24  k get pods
    25  docker ps
    26  clear
-   27  k get pods -n kube-system
+   27  k get pods -n kube-system 
    28  k get pods -o wide
    29  k get pods -o wide -n kube-system
    30  clear
@@ -208,6 +208,10 @@ alias k=kubectl
    45  k get api-resources
    46  k api-resources
    47  clear
+
+   55  k get pods
+   56  k create ns raman
+
    48  k get pods
    49  k run ramanapp2 --image httpd 
    50  k get pods
@@ -215,8 +219,7 @@ alias k=kubectl
    52  k delete pod ramanapp
    53  k get pods
    54  clear
-   55  k get pods
-   56  k create ns raman
+
    57  k get ns
    58  k create deployment ramandep --image httpd --replicas 5 -n raman
    59  k get pods
