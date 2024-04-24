@@ -233,5 +233,17 @@ alias k=kubectl
    67  history
 root@master:~# k get pods -n raman -o wide
 
+k get pods -n raman
+   83  k get deploy  -n raman
+   84  k api-resources
+   85  clear
+   86  k get deploy -n raman
+   87  k expose deploy ramandep -n raman --type NodePort --name extsvc --port 80 target-port 80
+   88  k expose pod -h
+   89  k get svc -n raman
+   90  k decribe svc -n raman extsvc
+   91  k describe svc extsvc -n raman
+   92  k get pods -n raman
+   93  k get pods -n raman -o wide
 
 ```
