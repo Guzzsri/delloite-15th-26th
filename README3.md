@@ -94,3 +94,71 @@ ifconfig
 
 
 ```
+
+
+```
+
+ON MASTER :
+
+vi script
+
+
+
+
+#!/bin/bash
+sudo apt update -y
+sudo apt install docker.io -y
+sudo mkdir -p -m 755 /etc/apt/keyrings
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+
+#on master
+#kubeadm init --pod-network-cidr=10.244.0.0/16 >> cluster_initialized.txt
+kubeadm init --pod-network-cidr=192.168.0.0/16 >> cluster_initialized.txt
+mkdir /root/.kube
+cp /etc/kubernetes/admin.conf /root/.kube/config
+kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/calico.yaml
+#kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+systemctl restart kubelet.service
+kubeadm token create --print-join-command
+
+
+
+
+
+    4  sh script 
+    5  history
+    6  clear
+    7  alias k=kubectl
+    8  k get nodes
+
+
+---
+
+ON WORKERS : BOTH 
+
+ vi script
+
+
+
+
+#!/bin/bash
+sudo apt update -y
+sudo apt install docker.io -y
+sudo mkdir -p -m 755 /etc/apt/keyrings
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+
+
+
+
+
+    3  sh script 
+    4  kubeadm join 172.31.59.103:6443 --token npvgez.dlrc6n9ohj29020x --discovery-token-ca-cert-hash sha256:6410957ea7f3cc06c18014c5fcd960eec30fe6a1a00733725451cb6fcbebe7d3
+
+
+```
