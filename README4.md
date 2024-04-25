@@ -93,5 +93,6 @@ http://18.209.179.168:31872/graph?g0.expr=sum(node_namespace_pod_container%3Acon
 http://18.209.179.168:31930/d/200ac8fdbfbb74b39aff88118e4d1c2c/kubernetes-compute-resources-node-pods?orgId=1&refresh=10s&var-datasource=default&var-cluster=&var-node=master&var-node=w1&var-node=w2
 
 
+https://github.com/dotdc/grafana-dashboards-kubernetes
 
 ```
