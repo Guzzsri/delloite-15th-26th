@@ -115,3 +115,53 @@ sonar new token : sqa_f2c2ac13525bb3a29d9f947bf0f417317d44601c
 ================================
 
 ```
+
+
+
+```
+
+
+================================
+
+
+add mvn tool in manage jenkins >> tool 
+
+
+
+build the code >> created the image >> ran it as a container ....
+
+
+docker rm -f mynewcontainer
+docker rmi `docker images`|| echo "Command 3 failed with exit code $?"
+docker build -t image-name:version .
+trivy --no-progress --exit-code 1 --severity HIGH,CRITICAL image-name:version
+docker run -d -p 8081:8080 --name mynewcontainer image-name:version
+
+
+===========================
+
+
+fromgitbash locally ,polling the pipleine:
+
+
+ git clone https://github.com/ramannkhanna2/devops-maven-docker.git
+  503  clear
+  504  cd devops-maven-docker/
+  505  ls
+  506  ls
+  507  cd src/
+  508  ls
+  509  cd main/
+  510  ls
+  511  cd java/
+  512  ls
+  513  cd webapp/
+  514  ls
+  515  vi LoginServlet.java
+  516  git add .
+  517  git commit -m "made changes "
+  518  git push origin master
+
+===================================
+
+```
