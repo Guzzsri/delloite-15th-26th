@@ -66,3 +66,52 @@ netstat -tulnp
 
 
 ```
+
+
+```
+
+-----
+freestyle project ...
+
+
+
+
+code >> sast (sonarqube ) >> build (mvn) >> artefact >> dockerfile >> docker build >> trivy >> docker image  >> container app >> dast
+
+
+
+
+install plugin
+-- manage jenkins >> installed sonarqube scanner plugin
+
+
+
+connected sonarqube with jenkins...
+-- system >> added sonaqube server on jenkins
+
+
+tools >> sonarqube tool gets installed 
+
+
+
+
+------
+
+in our pipeline :
+prepared sonarqube scanner env
+
+
+added a build step for analysis propertoes:
+sonar.projectName=test
+sonar.projectKey=test
+sonar.sources=src/main
+
+
+
+sonar new token : sqa_f2c2ac13525bb3a29d9f947bf0f417317d44601c
+
+
+
+================================
+
+```
